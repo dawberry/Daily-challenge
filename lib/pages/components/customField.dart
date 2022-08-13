@@ -17,12 +17,13 @@ class CustomField extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 15),
       child: TextFormField(
+        controller: controller,
         validator: validator,
         obscureText: isPass ? true : false,
         style: const TextStyle(color: Colors.white),
         decoration: InputDecoration(
             hintText: text,
-            hintStyle: const TextStyle(color: Colors.white),
+            hintStyle: const TextStyle(color: Colors.grey),
             enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(30),

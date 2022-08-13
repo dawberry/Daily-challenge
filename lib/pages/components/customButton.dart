@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   CustomButton({
     required this.pressed,
+    required this.text,
     Key? key,
   }) : super(key: key);
   VoidCallback pressed;
+  final text;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,10 +19,10 @@ class CustomButton extends StatelessWidget {
         child: TextButton(
             style: TextButton.styleFrom(backgroundColor: Colors.white),
             onPressed: pressed,
-            child: const Center(
+            child: Center(
               child: Text(
-                "Login",
-                style: TextStyle(
+                text,
+                style: const TextStyle(
                     color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.bold),

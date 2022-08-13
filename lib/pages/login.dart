@@ -1,17 +1,31 @@
+import 'package:daily_challenge/pages/home.dart';
+import 'package:daily_challenge/pages/signup.dart';
+import 'package:daily_challenge/provider/navigate.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
+import '../provider/firebase_auth.dart';
 import 'components/Logo.dart';
 import 'components/customButton.dart';
 import 'components/customField.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
+
+  final auth = FirebaseAuth.instance;
+
   TextEditingController passController = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,9 +52,9 @@ class LoginPage extends StatelessWidget {
                         children: <TextSpan>[
                           TextSpan(
                               text:
-                                  "Daily challenge the app help\nyou to get in "),
+                                  "Daily challenge the app that help\nyou to get "),
                           TextSpan(
-                              text: "Success",
+                              text: "Success in life",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                               ))
@@ -82,7 +96,7 @@ class LoginPage extends StatelessWidget {
                         CustomField(
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return "Email is no valid";
+                              return "password is no valid";
                             }
                           },
                           text: "Password",
@@ -90,10 +104,10 @@ class LoginPage extends StatelessWidget {
                           isPass: false,
                         ),
                         CustomButton(
-                          pressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              print("Hello Dave!");
-                            }
+                          text: "Login",
+                          pressed: () async {
+                            Auth().login(_formKey, emailController,
+                                passController, context);
                           },
                         ),
                         RichText(
@@ -106,7 +120,9 @@ class LoginPage extends StatelessWidget {
                                   text: "Sign up?",
                                   style: TextStyle(color: Colors.purpleAccent),
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () {})
+                                    ..onTap = () {
+                                      CustomNavigate().nav(SignUp(), context);
+                                    })
                             ]))
                       ],
                     ))
