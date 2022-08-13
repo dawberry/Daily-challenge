@@ -1,4 +1,4 @@
-package com.example.daily_challenge
+package com.dawberry.dailychallenge
 
 import io.flutter.embedding.android.FlutterActivity
 

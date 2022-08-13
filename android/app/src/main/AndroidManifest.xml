@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.daily_challenge">
+    package="com.dawberry.dailychallenge">
    <application
         android:label="daily_challenge"
         android:name="${applicationName}"

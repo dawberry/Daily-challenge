@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "65207587011",
+    "project_id": "daily-challenge-efd93",
+    "storage_bucket": "daily-challenge-efd93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65207587011:android:b32081f3aff5a6eca09276",
+        "android_client_info": {
+          "package_name": "com.dawberry.dailychallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65207587011-5l3k2uph1u2jm5hd4aa4i7t0lledc7gq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCKmCJUaAF9LTDpli3GBnbJE0Xda0wiVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65207587011-5l3k2uph1u2jm5hd4aa4i7t0lledc7gq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "65207587011-ljdh1gmif3gl2127d45asai0e74dt81c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dailyChallenge"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
