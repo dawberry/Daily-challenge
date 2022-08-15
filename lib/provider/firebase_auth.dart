@@ -25,12 +25,20 @@ class Auth {
           CustomNavigate().nav(HomePage(), context);
         });
       } on FirebaseAuthException catch (e) {
-        showsnackbar(e, context);
+        showsnack(e, context);
       } catch (e) {
         print(e);
       }
     }
   }
+
+  // Future<bool> getuser() async {
+  //   if (FirebaseAuth.instance.currentUser?.uid == null) {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // }
 
   Future<void> signUp(
     final formKey,
@@ -60,7 +68,7 @@ class Auth {
     }
   }
 
-  showsnackbar(e, context) {
+  showsnack(e, context) {
     final snackbar = SnackBar(
       content: Text("${e.message}"),
       duration: Duration(seconds: 3),

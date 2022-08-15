@@ -1,3 +1,7 @@
+import 'package:daily_challenge/pages/home.dart';
+import 'package:daily_challenge/provider/firebase_addFile.dart';
+import 'package:daily_challenge/provider/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -11,5 +15,7 @@ void main() async {
         fontFamily: "ubuntu",
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginPage()));
+      home: FirebaseAuth.instance.currentUser?.uid == null
+          ? LoginPage()
+          : HomePage()));
 }
